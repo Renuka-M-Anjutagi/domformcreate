@@ -20,16 +20,28 @@ function break_create()
     return input_ele
  }
 
- function button_create(tagname,attr1,attrval1,idname,value)
+ function button_create(tagname,attr1,attrval1,attr2,attrval2,attrn,attrvaln)
  {
     var button_ele =document.createElement(tagname)
     button_ele.setAttribute(attr1,attrval1)
-    button_ele.className = "main"
-    button_ele.id = idname
-    button_ele.value = value
-    return button_ele
+    button_ele.setAttribute(attr2,attrval2)
+    button_ele.setAttribute(attrn,attrvaln)
+    return button_ele;
  }
 
+ function foo()
+ {
+     let fname = document.getElementById("fname").value;
+     console.log(fname); 
+     let mname = document.getElementById("mname").value;
+     console.log(mname); 
+     let lname = document.getElementById("lname").value;
+     console.log(lname); 
+     let email = document.getElementById("email").value;
+     console.log(email); 
+     let address = document.getElementById("address").value;
+     console.log(address); 
+ }
  var fname_ele = label_create("lable","for","fname","Firstname");
  var fname_break = break_create()
  let input_fname = input_create("input","type","text","fname")
@@ -47,16 +59,16 @@ function break_create()
 
  var email_ele = label_create("lable","for","email","Email");
  var lable_break = break_create()
- let input_email = input_create("input","type","email","Email")
+ let input_email = input_create("input","type","email","email")
  var input_break = break_create()
 
- var password_ele = label_create("lable","for","password","Password");
+ var password_ele = label_create("lable","for","textarea","Address");
  var pass_break = break_create()
- let input_pass = input_create("input","type","password","Password")
+ let input_pass = input_create("textarea","rows","cols",'address')
  var input_pas_break = break_create()
 
  
- let input_type_submit = button_create("button","submit","submit","Submit","Submit")
+ let input_type_submit = button_create("input","type","submit","value","submit","onclick","foo()")
  var input_sub_break = break_create()
 
 
